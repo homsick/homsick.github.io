@@ -16,9 +16,9 @@
 <main>
     <h1 class="title">Кирилл Горбатюк</h1>
     <ul class="links">
-        <li><img src="/microdotblog.svg" alt="GitHub"><a href="https://github.com/homsick1" target="_blank">GitHub</a></li>
-        <li><img src="https://icons8.com/icon/lUktdBVdL4Kb/telegram" alt="Telegram"><a href="https://t.me/homsick" target="_blank">Telegram</a></li>
-        <li><img src="/telegram.svg" alt="Telegram"><a href="mailto:7659464@gmail.com" target="_blank">Почта</a></li>
+        <li><img width="16" height="16" src="https://img.icons8.com/windows/32/github.png" alt="GitHub"><a href="https://github.com/homsick1" target="_blank">GitHub</a></li>
+        <li><img width="16" height="16" src="https://img.icons8.com/ios-filled/50/telegram.png" alt="Telegram"><a href="https://t.me/homsick" target="_blank">Telegram</a></li>
+        <li><img width="16" height="16" src="https://img.icons8.com/fluency/48/gmail-new.png" alt="Gmail"><a href="mailto:7659464@gmail.com" target="_blank">Почта</a></li>
     </ul>
 </main>
   </main>
@@ -37,26 +37,29 @@
         }
       },
       particles: {
-        color: {
-          value: "000"
-        },
+        color: "000",
         links: {
-          color: {
-            value: "000000"
-          },
+          color: "000",
           enable: true,
           opacity: 0.7,
-          distance: 200
+          distance: 150
         },
         move: {
           enable: true,
           speed: { min: 1, max: 3 },
         },
+        number: {
+          density: {
+            enable: true,
+            value_area: 800
+          },
+          value: 80
+        },
         opacity: {
           value: { min: 0.3, max: 0.7 },
         },
         size: {
-          value: { min: 1, max: 10 },
+          value: { min: 1, max: 5 },
         }
       }
     }
