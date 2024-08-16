@@ -2,11 +2,46 @@
 
 {% block content %}
 <main>
-    <h1 class="title">Кирилл Горбатюк</h1>
-    <ul class="links">
-        <li><img width="16" height="16" src="https://img.icons8.com/windows/32/github.png" alt="GitHub"><a href="https://github.com/homsick1" target="_blank">GitHub</a></li>
+    <h1 class="name">Кирилл Горбатюк</h1>
+    <h2 class="position">Junior Python Backend Developer</h2>
+    <ul class="links">  
+        <li><img width="16" height="16" src="https://tech.hh.ru/api/logos/min-hh-red.png" alt="HeadHunter"><a href="https://krasnodar.hh.ru/resume/163f8253ff0d7b5ef90039ed1f694e64467a78" target="_blank">HeadHunter</a></li>
+        <li><img width="16" height="16" src="https://img.icons8.com/windows/32/github.png" alt="GitHub"><a href="https://github.com/homsick" target="_blank">GitHub</a></li>
         <li><img width="16" height="16" src="https://img.icons8.com/ios-filled/50/telegram.png" alt="Telegram"><a href="https://t.me/homsick" target="_blank">Telegram</a></li>
-        <li><img width="16" height="16" src="https://img.icons8.com/fluency/48/gmail-new.png" alt="Gmail"><a href="mailto:7659464@gmail.com" target="_blank">Почта</a></li>
+        <li><img width="16" height="16" src="https://img.icons8.com/fluency/48/gmail-new.png" alt="Gmail"><span class="copy-email" data-email="homsickdev@gmail.com">Почта</span></li>
+        <li><img width="16" height="16" src="https://img.icons8.com/material-outlined/24/phone.png" alt="Телефон"><span class="copy-phone" data-phone="+7 (995) 184-22-35">Телефон</span></li>
     </ul>
+    <div id="notification" class="notification" style="display: none;">Информация скопирована в буфер обмена!</div>
 </main>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Функция для отображения уведомления
+      function showNotification(message) {
+        const notification = document.getElementById('notification');
+        notification.textContent = message;
+        notification.style.display = 'block';
+        setTimeout(function() {
+          notification.style.display = 'none';
+        }, 3000); // Уведомление исчезает через 3 секунды
+      }
+  
+      // Обработчик для элементов копирования
+      function setupCopyHandler(selector, type) {
+        document.querySelectorAll(selector).forEach(element => {
+          element.addEventListener('click', function() {
+            const info = this.getAttribute(`data-${type}`);
+            navigator.clipboard.writeText(info).then(function() {
+              showNotification(`${type === 'email' ? 'Почта скопирована' : 'Телефон скопирован'} в буфер обмена!`);
+            }, function(err) {
+              console.error(`Ошибка при копировании ${type}: `, err);
+            });
+          });
+        });
+      }
+  
+      // Устанавливаем обработчики для почты и телефона
+      setupCopyHandler('.copy-email', 'email');
+      setupCopyHandler('.copy-phone', 'phone');
+    });
+  </script>
 {% endblock %}

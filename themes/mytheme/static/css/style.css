@@ -31,7 +31,8 @@ main {
     padding: 0;
     margin: 0;
     display: flex;
-    justify-content: center;
+    flex-wrap: wrap; /* Позволяет переносить элементы на новую строку */
+    justify-content: center; /* Центрирует элементы по горизонтали */
     gap: 1.5rem; /* Расстояние между элементами */
 }
 
@@ -42,4 +43,47 @@ main {
 
 .links li img {
     margin-right: 0.5rem;
+}
+
+
+.name {
+    font-size: 2.5rem; /* Размер шрифта для имени */
+    font-weight: bold; /* Жирный текст */
+    color: #333; /* Цвет текста */
+    margin-bottom: 0.5rem; /* Отступ снизу */
+    text-align: center; /* Выравнивание по центру */
+}
+
+.position {
+    font-size: 1.25rem; /* Размер шрифта для должности */
+    font-weight: normal; /* Обычный текст */
+    color: #555; /* Цвет текста */
+    margin-top: 0; /* Отступ сверху */
+    margin-bottom: 1rem; /* Отступ снизу */
+    text-align: center; /* Выравнивание по центру */
+}
+
+/* Стили для элемента копирования информации */
+.copy-email, .copy-phone {
+  cursor: pointer;
+  text-decoration: underline;
+  color: #007bff;
+}
+
+.copy-email:hover, .copy-phone:hover {
+  color: #0056b3;
+}
+
+/* Стили для уведомления */
+.notification {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1rem;
+  z-index: 1000;
 }
